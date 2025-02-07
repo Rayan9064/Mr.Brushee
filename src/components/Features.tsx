@@ -1,4 +1,4 @@
-import flawless from '../assets/flawless.png';
+// import flawless from '../assets/flawless.png';
 import compact from '../assets/compact.png';
 import product from '../assets/Component 12.png';
 
@@ -9,7 +9,7 @@ const Features = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 items-center justify-items-center">
         <div className="text-center">
         <img 
-          src={flawless} 
+          src='../assets/flawless.png' 
           alt="Flawless"
           className="w-48 h-auto" // Added size constraint
         />

@@ -1,4 +1,3 @@
-import React from 'react';
 import bg from '../assets/Rectangle 42.png'; // Background image
 import pocket from '../assets/Mask group.png';
 import shoeCleaning from '../assets/Group 38.png';

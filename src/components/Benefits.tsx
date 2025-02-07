@@ -1,26 +1,27 @@
-import losen from '../assets/FINAL 3-min 2.png';
-import brush from '../assets/Frame 19 BG REMOVED 2.png';
-import rub from '../assets/Frame 19 BG REMOVED 5.png';
+// const losen = '/assets/FINAL 3-min 2.png';
+// const brush = '/assets/Frame 19 BG REMOVED 2.png';
+// const rub = '/assets/Frame 19 BG REMOVED 5.png';
 
 const Benefits = () => {
   const steps = [
     {
       title: 'Loosen',
       description: 'Helps loosen dirt, stains, and grime making it easier to wipe or scrub away',
-      image: losen
+      image: 'src/assets/FINAL 3-min 2.png'
     },
     {
       title: 'Brush',
       description: 'Effectively removes dirt and debris from shoes, reaching deep into textured surfaces',
-      image: brush
+      image: 'src/assets/Frame 19 BG REMOVED 2.png'
     },
     {
       title: 'Rub',
       description: 'Removes dirt without scratching, perfect for maintaining the finish of sneakers and shoes',
-      image: rub
+      image: 'src/assets/Frame 19 BG REMOVED 5.png'
     }
   ];
 
+  // Rest of the component remains the same
   return (
     <section className="py-20 bg-white text-black font-nunito">
       <div className="container mx-auto px-6">
