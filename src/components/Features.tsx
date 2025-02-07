@@ -1,6 +1,6 @@
 // import flawless from '../assets/flawless.png';
-import compact from '../assets/compact.png';
-import product from '../assets/Component 12.png';
+// import compact from '../assets/compact.png';
+// import product from '../assets/Component 12.png';
 
 const Features = () => {
   return (
@@ -16,13 +16,13 @@ const Features = () => {
         </div>
         <div className="flex justify-center">
         <img 
-          src={product}
+          src='../assets/Component 12.png'
           alt="Product Image"
         />
         </div>
         <div className="text-center">
         <img 
-          src={compact} 
+          src='../assets/compact.png'
           alt="Compact"
           className="w-48 h-auto" // Added size constraint
         />

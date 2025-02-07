@@ -1,4 +1,4 @@
-import heroBackgroundImage from '../assets/Component 9.png'; // Or .png, .svg, etc.
+// import heroBackgroundImage from '../assets/Component 9.png'; // Or .png, .svg, etc.
 // Ensure the path is correct relative to your component file
 
 const Hero = () => {
@@ -6,7 +6,7 @@ const Hero = () => {
     <section
       className="relative h-screen overflow-hidden"
       style={{
-      backgroundImage: `url(${heroBackgroundImage})`,
+      backgroundImage: `url(../assets/Component 9.png)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
