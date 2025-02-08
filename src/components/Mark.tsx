@@ -1,5 +1,4 @@
-import React from 'react';
-import walk from '../assets/legs crowd fafafa@3x 1.png';
+import walk from '../assets/Mark/walk.png';
 
 const Mark = () => {
   return (

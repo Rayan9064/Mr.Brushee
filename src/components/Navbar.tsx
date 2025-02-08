@@ -1,4 +1,4 @@
-import circular_logo from '../assets/photo_2024-03-13_17-40-54 2.png';
+import circular_logo from '../assets/Navbar/circular_logo.png';
 
 const Navbar = () => {
   return (

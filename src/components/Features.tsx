@@ -1,6 +1,6 @@
-// import flawless from '../assets/flawless.png';
-// import compact from '../assets/compact.png';
-// import product from '../assets/Component 12.png';
+import flawless from '../assets/Features/Flawless.png';
+import compact from '../assets/Features/Compact.png';
+import product from '../assets/Features/product.png';
 
 const Features = () => {
   return (
@@ -9,20 +9,20 @@ const Features = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 items-center justify-items-center">
         <div className="text-center">
         <img 
-          src='../assets/flawless.png' 
+          src={flawless} 
           alt="Flawless"
           className="w-48 h-auto" // Added size constraint
         />
         </div>
         <div className="flex justify-center">
         <img 
-          src='../assets/Component 12.png'
+          src={product}
           alt="Product Image"
         />
         </div>
         <div className="text-center">
         <img 
-          src='../assets/compact.png'
+          src={compact} 
           alt="Compact"
           className="w-48 h-auto" // Added size constraint
         />

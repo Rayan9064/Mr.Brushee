@@ -1,7 +1,7 @@
-// import bg from '../assets/Rectangle 42.png'; // Background image
-// import pocket from '../assets/Mask group.png';
-// import shoeCleaning from '../assets/Group 38.png';
-// import spray from '../assets/Frame 31.png';
+import bg from '../assets/Intro/tile_bg.png'; // Background image
+import pocket from '../assets/Intro/pocket.png'; // Pocket image
+import shoeCleaning from '../assets/Intro/shoe_cleaning.png'; // Shoe cleaning image
+import spray from '../assets/Intro/spray.png'; // Spray image
 
 const Intro = () => {
   return (
@@ -9,7 +9,7 @@ const Intro = () => {
       className="relative py-20 text-white"
       style={{
         backgroundColor: '#1C1C1C', // Set background color here
-        backgroundImage: `url(../assets/Rectangle 42.png)`,
+        backgroundImage: `url(${bg})`, // Set background image here
         backgroundSize: 'cover', // Or 'contain', 'auto' as needed
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -35,17 +35,17 @@ const Intro = () => {
           <div className="relative w-96 h-72">
             {/* Top circle (mirrored position) */}
             <div className="absolute -top-8 right-12 w-24 h-24 rounded-full overflow-hidden">
-              <img src='../assets/Mask group.png' alt="Pocket" className="object-cover w-full h-full" />
+              <img src={pocket} alt="Pocket" className="object-cover w-full h-full" />
             </div>
 
             {/* Middle circle */}
             <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-48 h-48 rounded-full overflow-hidden">
-              <img src='../assets/Group 38.png' alt="Shoe Cleaning" className="object-cover w-full h-full" />
+              <img src={shoeCleaning} alt="Shoe Cleaning" className="object-cover w-full h-full" />
             </div>
 
             {/* Bottom circle (more distant) */}
             <div className="absolute -bottom-12 right-20 w-20 h-20 rounded-full overflow-hidden">
-              <img src='../assets/Frame 31.png' alt="Spray" className="object-cover w-full h-full" />
+              <img src={spray} alt="Spray" className="object-cover w-full h-full" />
             </div>
           </div>
 
