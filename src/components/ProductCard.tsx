@@ -26,7 +26,7 @@ const ProductCard = () => {
     };
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-10 bg-white">
             {/* "Don't have it yet?" Text */}
             <div className="text-center mb-8">
                 <p className="text-2xl font-semibold text-[#181818]">Don't have it yet?</p>
@@ -150,6 +150,7 @@ const ProductCard = () => {
                     We guarantee it works!
                 </p>
             </div>
+            <hr className="mt-10 border-[#D9D9D9]" />
         </section>
     );
 };

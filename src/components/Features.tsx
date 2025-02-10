@@ -11,20 +11,21 @@ const Features = () => {
         <img 
           src={flawless} 
           alt="Flawless"
-          className="w-48 h-auto" // Added size constraint
+          className="w-48 sm:w-32 h-auto" // Added size constraint
         />
         </div>
         <div className="flex justify-center">
         <img 
           src={product}
           alt="Product Image"
+          className='w-48 sm:w-32 h-auto' // Added size constraint
         />
         </div>
         <div className="text-center">
         <img 
           src={compact} 
           alt="Compact"
-          className="w-48 h-auto" // Added size constraint
+          className="w-48 sm:w-32 h-auto" // Added size constraint
         />
         </div>
       </div>
