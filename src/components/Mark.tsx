@@ -3,21 +3,22 @@ import walk from '../assets/Mark/walk.png';
 const Mark = () => {
   return (
     <section className="relative bg-white border-gray-200 overflow-hidden">
-      <div className="relative w-full mx-auto text-center p-0"> {/* Relative positioning for the container */}
+      <div className="relative w-full mx-auto text-center p-0">
         <img
           src={walk}
           alt="Walking feet"
-          className="w-full object-cover"
+          className="w-full h-auto object-cover"
         />
 
         <p
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-[32px] text-gray-600 font-['Nunito'] font-medium"
-          style={{ fontFamily: 'Lora', fontSize: '28px' }}
+          className="absolute bottom-0 xs:bottom-4 md:bottom-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-gray-600 font-['Nunito'] font-medium
+          text-sm xs:text-base sm:text-lg md:text-2xl lg:text-[28px]"
+          style={{ fontFamily: 'Lora' }}
         >
           leave a{' '}
           <span
-            className="text-[54px] italic"
-            style={{ fontFamily: 'Lora', fontSize: '45px' }}
+            className="italic text-lg xs:text-xl sm:text-2xl md:text-4xl lg:text-[45px]"
+            style={{ fontFamily: 'Lora' }}
           >
             Mark
           </span>

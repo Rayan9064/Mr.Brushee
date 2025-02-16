@@ -2,12 +2,12 @@ import circular_logo from '../assets/Navbar/circular_logo.png';
 
 const Navbar = () => {
   return (
-    <nav className="absolute top-0 left-0 right-0 mx-4 md:mx-8 lg:mx-16 p-4 md:p-6 flex justify-between items-center z-10">
+    <nav className="absolute top-0 left-0 right-0 mx-4 md:mx-8 lg:mx-16 xl:mx-24 2xl:mx-32 p-4 md:p-6 xl:p-8 flex justify-between items-center z-10">
       <div className="flex items-center gap-2">
-      <img src={circular_logo}  className="w-10 md:w-12 h-10 md:h-12" />
+        <img src={circular_logo} className="w-10 md:w-12 lg:w-14 xl:w-18 h-10 md:h-12 lg:h-14 xl:h-18" />
       </div>
-      <button className="bg-red-500 hover:bg-red-600 text-white px-4 md:px-6 py-2 rounded-full text-sm font-medium transition-colors">
-      Buy Now
+      <button className="bg-red-500 hover:bg-red-600 text-white px-4 md:px-6 lg:px-8 xl:px-10 py-2 xl:py-3 rounded-full text-sm md:text-base xl:text-base font-medium transition-colors">
+        Buy Now
       </button>
     </nav>
   );

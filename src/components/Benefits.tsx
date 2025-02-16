@@ -24,7 +24,7 @@ const Benefits = () => {
   return (
     <section className="py-20 bg-white text-black font-nunito">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <div key={index} className="text-center">
               <div className="w-32 h-32 bg-[#A5A5A5] rounded-full mx-auto mb-8 flex items-center justify-center overflow-hidden">

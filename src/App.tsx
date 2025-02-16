@@ -12,7 +12,7 @@ import Intro from './components/intro';
 
 function App() {
   return (
-    <div className="w-full">
+    <div>
       <Navbar />
       <Hero />
       <Features />
