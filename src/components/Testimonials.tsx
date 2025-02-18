@@ -1,9 +1,10 @@
 "use client"
+import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { Star } from 'lucide-react';
 
 const Testimonials = () => {
-  const testimonials = [
+  const testimonials = React.useMemo(() => [
     {
       name: "Esther Howard",
       location: "New Orleans",
@@ -46,7 +47,7 @@ const Testimonials = () => {
       rating: 5,
       text: "\"Wish I had this growing up , will make sure my kids get them for sure \""
     }
-  ];
+  ], []);
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const testimonialRef = useRef<HTMLDivElement>(null);
@@ -84,6 +85,7 @@ const Testimonials = () => {
 
   useEffect(() => {
   // Update currentTestimonial based on scroll position if needed (optional)
+  const containerRef = testimonialRef.current;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry, index) => {
@@ -99,14 +101,14 @@ const Testimonials = () => {
       });
     },
     {
-      root: testimonialRef.current, // Use the testimonial container as the root
+      root: containerRef, // Use the testimonial container as the root
       threshold: 0.5, // Adjust as needed (when 50% of an element is visible)
     }
   );
 
   // Observe each testimonial
-  if (testimonialRef.current) {
-    const testimonialElements = Array.from(testimonialRef.current.children);
+  if (containerRef) {
+    const testimonialElements = Array.from(containerRef.children);
     testimonialElements.forEach((element) => {
       observer.observe(element);
     });
@@ -114,8 +116,8 @@ const Testimonials = () => {
 
   // Cleanup observer on unmount
   return () => {
-    if (testimonialRef.current) {
-      const testimonialElements = Array.from(testimonialRef.current.children);
+    if (containerRef) {
+      const testimonialElements = Array.from(containerRef.children);
       testimonialElements.forEach((element) => {
         observer.unobserve(element);
       });
@@ -140,7 +142,7 @@ const Testimonials = () => {
                 <div> 
                   <div className="flex items-start justify-between mb-2 bg-[#595959] text-white p-2 rounded-lg"> 
                     <div className="flex items-center space-x-3">
-                      <img
+                      <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
                         className="w-10 h-10 rounded-full object-cover"

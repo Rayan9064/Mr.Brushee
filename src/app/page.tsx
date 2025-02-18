@@ -10,7 +10,6 @@ import ProductCard from '@/components/ProductCard';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Intro from '@/components/intro';
-import Guarantee from '@/components/Guarantee';
 
 export default function Home() {
   return (

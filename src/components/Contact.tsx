@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const Contact = () => {
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     { question: 'How to use this product?', answer: 'Detailed instructions on using the product effectively.' },
@@ -13,7 +13,7 @@ const Contact = () => {
     { question: "What's your return policy", answer: 'Full description of the company return policy.' }
   ];
 
-  const toggleFaq = (index: any) => {
+  const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form - Left Side */}
           <div className="space-y-6">
-            <h2 className="text-2xl text-[#333] mb-4">Tell us what's on your mind!</h2>
+            <h2 className="text-2xl text-[#333] mb-4">Tell us what&apos;s on your mind!</h2>
             <form className="space-y-4">
               {/* Name and Contact in same line */}
               <div className="grid grid-cols-2 gap-4">

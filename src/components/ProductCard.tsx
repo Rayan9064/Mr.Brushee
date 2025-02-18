@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Image from 'next/image';
-import { ShoppingCart, Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
 import cross_walk from '@/ProductCard/cross_walk.png';
 import product_main from '@/ProductCard/Product_main.png';
 import product_2 from '@/ProductCard/Product_2.png';
@@ -60,7 +60,7 @@ const ProductCard = () => {
         <section className="py-10 bg-white">
             {/* "Don't have it yet?" Text */}
             <div className="text-center mb-4">
-                <p className="text-2xl font-semibold text-[#181818]">Don't have it yet?</p>
+                <p className="text-2xl font-semibold text-[#181818]">Don&apos;t have it yet?</p>
                 <p className="text-[#777] mt-2">Mr. Brushee is what you need in this fast-paced world.</p>
             </div>
             <div className="relative w-full py-8 min-h-[500px] lg:min-h-screen bg-cover bg-center px-4 lg:px-8" style={{ backgroundImage: `url(${cross_walk.src})` }}>

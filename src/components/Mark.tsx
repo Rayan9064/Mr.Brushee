@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import walk from '@/Mark/walk.png';
-import { fromJSON } from 'postcss';
 
 const Mark = () => {
   return (

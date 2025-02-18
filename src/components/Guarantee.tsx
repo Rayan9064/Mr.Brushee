@@ -14,7 +14,7 @@ export default function Guarantee() {
             >
                 <h3 className="text-2xl text-[#333] mb-6">30 Days Guarantee</h3>
                 <p className="text-[#777] text-base">
-                    We stand by our products with a 30-day, 100% free guarantee. If you're not
+                    We stand by our products with a 30-day, 100% free guarantee. If you&apos;re not
                     completely satisfied with your order, simply ship it back to us for a full refund.
                     We guarantee it works!
                 </p>
