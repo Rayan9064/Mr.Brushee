@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Google Service Account
+service-account.json
+
+# Additional API routes
+send-email
+google-sheets
+
+# Additional component
+PopupForm.tsx
+
+# Additional utils
+utils
+sendEmail.ts
+googleSheets.ts

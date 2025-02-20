@@ -29,25 +29,17 @@ const ProductCard = () => {
     };
 
     const handleBuyNow = async () => {
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/create-checkout-session`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    productId: 'mr-brushee',
-                    quantity,
-                    productName: 'Mr. Brushee',
-                    productDescription: 'Double sided shoe brush with portable design spray',
-                    productPrice: 1500,
-                    productImage: productImages[0],
-                }),
-            });
-            const data = await response.json();
+        const response = await fetch('/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+        if (data.url) {
             window.location.href = data.url;
-        } catch (error) {
-            console.error('Error creating checkout session:', error);
         }
     };
+
     const nextImage = () => {
         setSelectedImage((prev) => (prev + 1) % productImages.length);
     };

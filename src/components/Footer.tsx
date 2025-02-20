@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image'
 import hands from '@/Footer/hands.png';
 import product from '@/Footer/product.png';
@@ -5,6 +6,18 @@ import grab_it from '@/Footer/grab_it.png';
 
 const Footer = () => {
   const footerLinks = ['About Us', 'Return Policy', 'Privacy Policy', 'Terms & Conditions'];
+
+  const handleBuyNow = async () => {
+    const response = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const data = await response.json();
+    if (data.url) {
+      window.location.href = data.url;
+    }
+  };
 
   return (
     <footer className="w-full h-screen bg-white flex flex-col">
@@ -29,7 +42,7 @@ const Footer = () => {
 
         {/* 3. Button */}
         <div className="flex-1 flex items-center justify-center">
-          <button className="bg-white text-base max-sm:text-[12px] md:text-sm text-red-500 border border-red-400 hover:bg-red-500 hover:text-white px-8 py-2 rounded-full transition-colors font-semibold">
+          <button onClick={handleBuyNow} className="bg-white text-base max-sm:text-[12px] md:text-sm text-red-500 border border-red-400 hover:bg-red-500 hover:text-white px-8 py-2 rounded-full transition-colors font-semibold">
             I Need It!
           </button>
         </div>
@@ -45,15 +58,15 @@ const Footer = () => {
           <div className="absolute bottom-0 left-0 right-0 w-full backdrop-blur-md bg-[#6C6C6C]/30 py-4 lg:py-6">
             <div className="w-full px-4">
               <div className="w-full md:max-w-[80%] lg:max-w-[50%] flex justify-between md:justify-center items-center text-[#F2F2F2] mx-auto px-4 lg:px-0">
-          {footerLinks.map((link, index) => (
-            <a
-              key={index}
-              href="#"
-              className="text-[10px] md:text-xs lg:text-sm hover:text-gray-800 transition-colors md:mx-3 lg:mx-4"
-            >
-              {link}
-            </a>
-          ))}
+                {footerLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="text-[10px] md:text-xs lg:text-sm hover:text-gray-800 transition-colors md:mx-3 lg:mx-4"
+                  >
+                    {link}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
