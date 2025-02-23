@@ -1,7 +1,9 @@
 "use client"
 import { useState } from 'react';
 import Image from 'next/image';
-import { Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Heart from '@/ProductCard/Heart.png';
+import ShareHeart from '@/ProductCard/Handshake Heart.png';
 import cross_walk from '@/ProductCard/cross_walk.png';
 import product_main from '@/ProductCard/Product_main.png';
 import product_2 from '@/ProductCard/Product_2.png';
@@ -109,53 +111,47 @@ const ProductCard = () => {
                             <p className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6">
                                 double sided shoe brush, portable design spray, built-in detergent with refillable tank, ideal for deep cleaning
                             </p>
-
-                            <div className="grid grid-cols-3 gap-2 md:gap-3 mb-6 md:mb-8">
-                                <div className="bg-white/10 p-2 md:p-3 rounded-lg text-center">
-                                    <span className="text-xs md:text-sm">14.4 cm</span>
-                                </div>
-                                <div className="bg-white/10 p-2 md:p-3 rounded-lg text-center">
-                                    <span className="text-xs md:text-sm">5.66 in</span>
-                                </div>
-                                <div className="bg-white/10 p-2 md:p-3 rounded-lg text-center">
-                                    <span className="text-xs md:text-sm">4cm/1.57in</span>
-                                </div>
-                            </div>
-
+                            <hr className="border-white/10 my-2 md:my-4" />
                             <div className="mb-6 md:mb-8">
-                                <div className="flex items-baseline gap-2 mb-4">
-                                    <span className="text-xl md:text-2xl font-bold">$15.00</span>
-                                    <span className="text-xs md:text-sm text-gray-400 line-through">USD 25.00</span>
-                                </div>
-                                <div className="flex items-center gap-4 mb-4 md:mb-6">
-                                    <span className="text-xs md:text-sm text-gray-400">Quantity</span>
+                                <div className="flex flex-col gap-1 mb-4">
                                     <div className="flex items-center gap-2">
-                                        <button 
-                                            onClick={decrementQuantity}
-                                            className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-                                        >
-                                            -
-                                        </button>
-                                        <span>{quantity}</span>
-                                        <button 
-                                            onClick={incrementQuantity}
-                                            className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-                                        >
-                                            +
-                                        </button>
+                                        <span className="text-xs md:text-sm text-gray-400 line-through">USD 25.00</span>
                                     </div>
-                                </div>
-                                <button onClick={handleBuyNow} className="w-full bg-red-500 hover:bg-red-600 text-white py-2.5 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors mb-4">
-                                    Buy Now
-                                </button>
-                                <div className="flex items-center justify-between text-xs md:text-sm text-gray-400">
-                                    <div className="flex items-center gap-2">
-                                        <Share2 className="w-3 md:w-4 h-3 md:h-4" />
-                                        <span>Share</span>
+                                    <span className="text-2xl md:text-3xl font-bold text-white">$15.00
+                                        <span className="text-xs md:text-sm text-red-500"> sale</span></span>
+
+                                    <div className="flex items-center gap-4 mb-4 md:mb-6">
+                                        <span className="text-xs md:text-sm text-gray-400">Quantity</span>
+                                        <div className="flex items-center gap-2">
+                                            <button
+                                                onClick={decrementQuantity}
+                                                className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+                                            >
+                                                -
+                                            </button>
+                                            <span>{quantity}</span>
+                                            <button
+                                                onClick={incrementQuantity}
+                                                className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <Heart className="w-3 md:w-4 h-3 md:h-4" />
-                                        <span>Saved with 5.6K+ Pins</span>
+                                    <button onClick={handleBuyNow} className="w-full bg-red-500 hover:bg-red-600 text-white py-2.5 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors mb-4">
+                                        Buy Now
+                                    </button>
+                                    <div className="flex items-center justify-between text-xs md:text-sm text-gray-400">
+                                        <div className="flex items-center gap-2 justify-end">
+                                            <div className="flex items-center gap-2 max-w-[60px] mr-4">
+                                                <Image src={ShareHeart} alt='Share' className="w-3 md:w-6 h-3 md:h-6 flex-shrink-0" />
+                                                <span className='text-[10px] leading-tight'>30 Days Guarantee</span>
+                                            </div>
+                                            <div className="flex items-center gap-2 max-w-[120px] ml-4">
+                                                <Image src={Heart} alt='Heart' className="w-3 md:w-6 h-3 md:h-6 flex-shrink-0" />
+                                                <span className='text-[10px] leading-tight'>Shipped with love from Texas</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
