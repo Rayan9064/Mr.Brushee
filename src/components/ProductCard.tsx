@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ShoppingCart, Heart, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
 import cross_walk from '../assets/ProductCard/cross_walk.png';
 import product_main from '../assets/ProductCard/Product_main.png';
@@ -16,7 +16,36 @@ const ProductCard = () => {
         product_3,
         product_4
     ];
+    const [quantity, setQuantity] = useState(1);
 
+    const incrementQuantity = () => {
+        setQuantity(prev => prev + 1);
+    };
+
+    const decrementQuantity = () => {
+        setQuantity(prev => Math.max(1, prev - 1));
+    };
+
+    const handleBuyNow = async () => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API}/create-checkout-session`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    productId: 'mr-brushee',
+                    quantity,
+                    productName: 'Mr. Brushee',
+                    productDescription: 'Double sided shoe brush with portable design spray',
+                    productPrice: 1500,
+                    productImage: productImages[0],
+                }),
+            });
+            const data = await response.json();
+            window.location.href = data.url;
+        } catch (error) {
+            console.error('Error creating checkout session:', error);
+        }
+    };
     const nextImage = () => {
         setSelectedImage((prev) => (prev + 1) % productImages.length);
     };
@@ -107,16 +136,22 @@ const ProductCard = () => {
                                 <div className="flex items-center gap-4 mb-4 md:mb-6">
                                     <span className="text-xs md:text-sm text-gray-400">Quantity</span>
                                     <div className="flex items-center gap-2">
-                                        <button className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                        <button 
+                                            onClick={decrementQuantity}
+                                            className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+                                        >
                                             -
                                         </button>
-                                        <span>1</span>
-                                        <button className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                                        <span>{quantity}</span>
+                                        <button 
+                                            onClick={incrementQuantity}
+                                            className="w-6 md:w-8 h-6 md:h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+                                        >
                                             +
                                         </button>
                                     </div>
                                 </div>
-                                <button className="w-full bg-red-500 hover:bg-red-600 text-white py-2.5 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors mb-4">
+                                <button onClick={handleBuyNow} className="w-full bg-red-500 hover:bg-red-600 text-white py-2.5 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors mb-4">
                                     Buy Now
                                 </button>
                                 <div className="flex items-center justify-between text-xs md:text-sm text-gray-400">
