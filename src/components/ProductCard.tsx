@@ -117,7 +117,7 @@ const ProductCard = () => {
                                     <div className="flex items-center gap-2">
                                         <span className="text-xs md:text-sm text-gray-400 line-through">USD 25.00</span>
                                     </div>
-                                    <span className="text-2xl md:text-3xl font-bold text-white">$15.00
+                                    <span className="text-2xl md:text-3xl font-bold text-white">$20.00
                                         <span className="text-xs md:text-sm text-red-500"> sale</span></span>
 
                                     <div className="flex items-center gap-4 mb-4 md:mb-6">
