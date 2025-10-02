@@ -48,95 +48,157 @@ The UI and layouts were built to match a Figma design provided by the client (Fi
 
 ## Project structure (high level)
 
-- `app/` — Next.js App Router pages and server routes
-  - `api/checkout/route.ts` — creates a Stripe Checkout session
-  - `api/payment-success/route.ts` — payment success handling (see file for details)
-- `components/` — UI components (Hero, Navbar, ProductCard, Footer, etc.)
-- `public/` — static image assets used by the site
-- `src/utils/` — helper utilities (Google Sheets + email utilities are present but commented)
+<!-- prettier-ignore -->
+# Mr. Brushee — Portable Shoe Cleaner
+
+![Next.js](https://img.shields.io/badge/Next.js-15.1.7-000000?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-6772E5?style=for-the-badge&logo=stripe)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
+
+> A responsive marketing + storefront site for the "Mr. Brushee" portable shoe cleaner — built with Next.js and Stripe Checkout.
+
+---
+
+## Quick demo
+
+> Add screenshots into `./screenshots/` and they'll render in the gallery below.
+
+| Desktop | Tablet | Mobile |
+|---:|:---:|:---:|
+| ![desktop-home](./screenshots/desktop-home.png) | ![tablet-home](./screenshots/tablet-home.png) | ![mobile-home](./screenshots/mobile-home.png) |
+
+---
+
+## What is this
+
+- 🛍️ Marketing + storefront for a single product (Mr. Brushee)
+- 💳 Stripe Checkout for secure payments
+- 📦 Shipping & billing collection supported during checkout
+- 🎨 Built from a Figma design reference with responsive layouts
+
+## Features
+
+- ✅ Responsive layout (desktop / tablet / mobile)
+- ✅ Hosted Stripe Checkout sessions (server-side)
+- ✅ Billing, phone & shipping address collection
+- ✅ Adjustable product quantity in checkout
+- ⚙️ Email & Google Sheets integration hooks (commented helpers included)
+
+## Tech & dependencies
+
+| Category | Libraries |
+|---|---|
+| Framework | Next.js (App Router) + React 19 |
+| Styling | Tailwind CSS |
+| Payments | stripe (Stripe Checkout) |
+| Email | @sendgrid/mail, nodemailer (present but optional) |
+| Google | googleapis (optional Google Sheets helper) |
+
+Key entries are visible in `package.json`.
+
+## Payment integration details
+
+Stripe Checkout session is created at `src/app/api/checkout/route.ts`.
+
+- Payment method: card
+- Mode: payment
+- Billing address collection: required
+- Phone number collection: enabled
+- Shipping countries: US, CA, IN, GB
+- Product: "Mr. Brushee" ($20.00 hard-coded)
+- Redirects: `SUCCESS` and `CANCEL` routes use `NEXT_PUBLIC_BASE_URL`
 
 ## Environment variables
 
-Create a `.env.local` (or use your hosting provider's environment config) and set the following values:
+Create a `.env.local` at the project root and set:
 
-- `STRIPE_SECRET_KEY` — your Stripe secret key (required to create Checkout sessions)
-- `NEXT_PUBLIC_BASE_URL` — site base URL used for success/cancel redirects, e.g. `https://yourdomain.com` or `http://localhost:3000`
-- `EMAIL_USER` / `EMAIL_PASS` — (optional) required if using `nodemailer` in `sendEmail.ts`
-- `SENDGRID_API_KEY` — (optional) if using SendGrid via `@sendgrid/mail`
-- `GOOGLE_SPREADSHEET_ID` and service account credentials file (optional) — used by commented Google Sheets helper
+| Variable | Purpose | Required |
+|---|---|:---:|
+| `STRIPE_SECRET_KEY` | Stripe secret key (server-side) | ✅ |
+| `NEXT_PUBLIC_BASE_URL` | Base URL for success/cancel redirects | ✅ |
+| `EMAIL_USER`, `EMAIL_PASS` | SMTP credentials for nodemailer (optional) | ⚪ |
+| `SENDGRID_API_KEY` | SendGrid API key (optional) | ⚪ |
+| `GOOGLE_SPREADSHEET_ID` | Google Sheets ID for logging (optional) | ⚪ |
 
 Notes:
 
-- The app expects `STRIPE_SECRET_KEY` to be available server-side. Never expose your secret key in client code.
-- `NEXT_PUBLIC_BASE_URL` is used in server routes to craft success/cancel URLs for Stripe Checkout.
+- Never expose `STRIPE_SECRET_KEY` in client-side code.
+- For local testing use Stripe test keys and the test card `4242 4242 4242 4242`.
+
+## Scripts
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start local dev server (Next.js TurboPack) |
+| `npm run build` | Build for production |
+| `npm start` | Start production server |
+| `npm run lint` | Run ESLint |
 
 ## How to run locally
 
-1. Install dependencies:
+1. Install dependencies
 
-```
+```powershell
 npm install
 ```
 
-2. Create `.env.local` in the project root and add the env vars from the previous section.
+2. Add `.env.local` with the required variables.
 
-3. Run the dev server:
+3. Start development server
 
-```
+```powershell
 npm run dev
 ```
 
-4. Open `http://localhost:3000` in your browser.
+4. Open `http://localhost:3000`.
 
-Stripe checkout sessions will be created by the server route. To test payments locally, use a Stripe test secret key and the card number `4242 4242 4242 4242` with any future expiry and CVC.
+## Screenshots & guidelines
 
-## Screenshots (placeholders)
+- Place screenshots in `./screenshots/` with the suggested filenames:
+  - `desktop-home.png` (1440×900)
+  - `tablet-home.png` (1024×768)
+  - `mobile-home.png` (375×812)
+  - `desktop-product.png` (1440×900)
+  - `mobile-checkout.png` (375×812)
 
-Create a `screenshots/` folder at the project root and add images for these views. Suggested file names and recommended resolutions:
+- Example markdown to add a screenshot elsewhere:
 
-- `desktop-home.png` — Desktop homepage (1440×900)
-- `tablet-home.png` — Tablet homepage (1024×768)
-- `mobile-home.png` — Mobile homepage (375×812)
-- `desktop-product.png` — Desktop product / checkout flow (1440×900)
-- `mobile-checkout.png` — Mobile checkout screen (375×812)
-
-You can add screenshot markdown in this README like:
-
-![Desktop homepage](./screenshots/desktop-home.png)
+```md
+![Product page - Desktop](./screenshots/desktop-product.png)
+```
 
 ## Deployment
 
-This project is optimized for Vercel (Next.js official host). To deploy:
+Recommended: Vercel — Connect the repo, add environment variables and deploy. Vercel auto-detects Next.js.
 
-1. Push the repo to GitHub.
-2. Import the repo into Vercel and set the environment variables in the Vercel dashboard.
-3. Vercel will detect Next.js and build automatically.
+Manual build & run:
 
-Alternatively, you can build and run manually:
-
-```
+```powershell
 npm run build
 npm start
 ```
 
-## Notes & optional extras
+## Optional extras / notes
 
-- There are commented utilities in `src/utils/` for sending emails (`sendEmail.ts`) and logging to Google Sheets (`googleSheets.ts`). They require additional setup (service account JSON, API keys) and are currently commented out.
-- Consider centralizing payment/product metadata into a small server-side product model or an environment-driven config instead of hard-coding price and product details in the checkout route.
+- `src/utils/sendEmail.ts` and `src/utils/googleSheets.ts` contain commented helper code for transactional emails and sheet logging. They need API keys and a service account JSON (for Google Sheets).
+- Consider moving product metadata (price, images) out of the checkout route into a shared config or CMS for easier updates.
 
 ## Contributing
 
-If you want to make improvements:
+PRs welcome. Ideas:
 
-- Add unit/integration tests for critical server routes.
-- Extract product definitions and pricing to a shared config file.
-- Hook up the SendGrid or Nodemailer utilities to send transactional emails upon successful payment.
+- Add tests for API routes
+- Extract product config into a JSON or CMS
+- Implement a webhook to verify Stripe payments and trigger emails/logging
 
 ---
 
-If you'd like, I can also:
+If you want, I can:
 
-- Add the `screenshots/` folder and a sample screenshot placeholder images.
-- Wire the SendGrid email flow or Google Sheets logging (needs API keys).
+- Add the `screenshots/` folder and generate simple placeholder images.
+- Wire SendGrid email flow or Google Sheets logging (requires API keys and service account file).
 
-Marking the README drafting todo completed next.
+---
+
+*README updated with richer visual structure, tables, badges and screenshot gallery.*
