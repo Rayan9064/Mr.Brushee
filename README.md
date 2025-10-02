@@ -6,6 +6,8 @@ The design was implemented from a Figma reference and the project contains respo
 
 ---
 
+<img width="1346" height="631" alt="image" src="https://github.com/user-attachments/assets/fbdd368e-a087-408b-8eba-2a930f343624" />
+
 ## What this website is
 
 - A marketing + storefront site for the "Mr. Brushee" portable shoe cleaner.
@@ -66,7 +68,11 @@ The UI and layouts were built to match a Figma design provided by the client (Fi
 
 | Desktop | Tablet | Mobile |
 |---:|:---:|:---:|
-| ![desktop-home](./screenshots/desktop-home.png) | ![tablet-home](./screenshots/tablet-home.png) | ![mobile-home](./screenshots/mobile-home.png) |
+| ![desktop-home] 
+<img width="1365" height="680" alt="image" src="https://github.com/user-attachments/assets/2143527f-8f6f-4fe3-8039-f3f02ff89e28" /> | ![tablet-home] 
+<img width="794" height="675" alt="image" src="https://github.com/user-attachments/assets/98787d3b-30a0-4003-b946-59a3b542777c" />
+| ![mobile-home](<img width="712" height="675" alt="image" src="https://github.com/user-attachments/assets/490d5da7-4c42-4d69-9dfa-df68ec394173" />
+) |
 
 ---
 
