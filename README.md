@@ -66,13 +66,34 @@ The UI and layouts were built to match a Figma design provided by the client (Fi
 
 > Add screenshots into `./screenshots/` and they'll render in the gallery below.
 
-| Desktop | Tablet | Mobile |
-|---:|:---:|:---:|
-| ![desktop-home] 
-<img width="1365" height="680" alt="image" src="https://github.com/user-attachments/assets/2143527f-8f6f-4fe3-8039-f3f02ff89e28" /> | ![tablet-home] 
-<img width="794" height="675" alt="image" src="https://github.com/user-attachments/assets/98787d3b-30a0-4003-b946-59a3b542777c" />
-| ![mobile-home](<img width="712" height="675" alt="image" src="https://github.com/user-attachments/assets/490d5da7-4c42-4d69-9dfa-df68ec394173" />
-) |
+### Gallery (replace the images with your own)
+
+Desktop / Tablet / Mobile screenshots can be added individually. I removed the table layout to avoid rendering issues — use simple image embeds instead.
+
+**Home (recommended)**
+
+![Home - Desktop](![Desktop](./public/screenshots/image.png))
+
+![Home - Tablet](![Tablet](./public/screenshots/image-1.png))
+
+![Home - Mobile](![Mobile](./public/screenshots/image-2.png))
+
+---
+
+### Additional screenshots to include
+
+Please add images for these important flows. Suggested filenames are shown in parentheses.
+
+- Product card (desktop + mobile): `product-card-desktop.png`, `product-card-mobile.png`
+- Payment / Checkout (desktop + mobile): `checkout-desktop.png`, `checkout-mobile.png`
+- Payment Success page (desktop + mobile): `success-desktop.png`, `success-mobile.png`
+- Payment Cancel / Cancelled page (desktop + mobile): `cancel-desktop.png`, `cancel-mobile.png`
+
+Example markdown to embed a product card screenshot:
+
+```md
+![Product card - Desktop](./screenshots/product-card-desktop.png)
+```
 
 ---
 
