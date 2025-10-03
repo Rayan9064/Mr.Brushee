@@ -98,16 +98,21 @@ Desktop / Tablet / Mobile screenshots can be added individually. I removed the t
 
 Please add images for these important flows. Suggested filenames are shown in parentheses.
 
-- Product card (desktop + mobile): `product-card-desktop.png`, `product-card-mobile.png`
-- Payment / Checkout (desktop + mobile): `checkout-desktop.png`, `checkout-mobile.png`
-- Payment Success page (desktop + mobile): `success-desktop.png`, `success-mobile.png`
-- Payment Cancel / Cancelled page (desktop + mobile): `cancel-desktop.png`, `cancel-mobile.png`
+- Product card (desktop + mobile): 
+<div align="center">
+  <img width="1363" height="632" alt="image" src="https://github.com/user-attachments/assets/a34ca65b-65f5-48e5-8191-4dfbbed7e683" /> <hr>
+  <img width="352" height="631" alt="image" src="https://github.com/user-attachments/assets/39563171-1294-4bc7-ad48-d64ec49663b6" /> <hr>
+</div>
 
-Example markdown to embed a product card screenshot:
-
-```md
-![Product card - Desktop](./screenshots/product-card-desktop.png)
-```
+- Payment / Checkout: 
+  <div align="center">
+    <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/57e56984-560c-4939-9de4-dd54fa5631d6" /> <hr>
+  </div>
+  
+- Payment Cancel / Cancelled page: 
+<div align="center">
+    <img width="1365" height="631" alt="image" src="https://github.com/user-attachments/assets/40fecf70-a433-4586-a089-c6142b965c82" />
+  </div>
 
 ---
 
