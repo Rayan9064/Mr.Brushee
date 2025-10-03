@@ -246,5 +246,3 @@ If you want, I can:
 - Wire SendGrid email flow or Google Sheets logging (requires API keys and service account file).
 
 ---
-
-*README updated with richer visual structure, tables, badges and screenshot gallery.*
