@@ -72,11 +72,25 @@ Desktop / Tablet / Mobile screenshots can be added individually. I removed the t
 
 **Home (recommended)**
 
-![Home - Desktop](![Desktop](./public/screenshots/image.png))
+### Home Screens
 
-![Home - Tablet](![Tablet](./public/screenshots/image-1.png))
+<div align="center">
+<b>Desktop</b>
+  
+![Home - Desktop](https://github.com/user-attachments/assets/656273ee-ec6e-445b-96b6-e39a25321027) <hr>
+</div>
 
-![Home - Mobile](![Mobile](./public/screenshots/image-2.png))
+<div align="center">
+<b>Tablet</b>
+
+![Home - Tablet](https://github.com/user-attachments/assets/68bd4915-bf8c-44e3-805e-ff9e2a4b6713) <hr>
+</div>
+
+<div align="center">
+<b>Mobile</b>
+
+![Home - Mobile](https://github.com/user-attachments/assets/9afef5fe-7fd5-4afa-89a4-1f6855954c84)
+</div>
 
 ---
 
